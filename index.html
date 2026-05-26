@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HLTH Amsterdam — Status</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  body { background: #0f172a; color: #e2e8f0; padding: 40px 20px; min-height: 100vh; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  h1 { font-size: 36px; margin-bottom: 8px; }
+  .subtitle { color: #94a3b8; margin-bottom: 8px; font-size: 15px; }
+  .countdown { font-size: 18px; color: #f59e0b; margin-bottom: 32px; font-weight: 600; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; }
+  .platform { background: #1e293b; border-radius: 12px; padding: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+  .platform h2 { font-size: 20px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid #334155; }
+  .feature { display: flex; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #283548; gap: 12px; }
+  .feature:last-child { border-bottom: none; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+  .dot.green { background: #22c55e; }
+  .dot.yellow { background: #eab308; }
+  .dot.red { background: #ef4444; }
+  .dot.grey { background: #64748b; }
+  .dot.blue { background: #3b82f6; }
+  .info { flex: 1; }
+  .name { font-weight: 600; margin-bottom: 4px; font-size: 15px; }
+  .meta { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+  .status-cut { color: #94a3b8; text-decoration: line-through; }
+  .legend { display: flex; gap: 20px; margin-top: 24px; flex-wrap: wrap; font-size: 13px; color: #94a3b8; padding: 16px; background: #1e293b; border-radius: 8px; }
+  .legend-item { display: flex; align-items: center; gap: 8px; }
+  .legend-item .dot { margin-top: 0; }
+  footer { color: #64748b; font-size: 13px; margin-top: 32px; text-align: center; }
+  .banner { background: #7c2d12; border-left: 4px solid #f97316; padding: 16px 20px; border-radius: 8px; margin-bottom: 24px; font-size: 14px; }
+  .banner b { color: #fed7aa; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>HLTH Amsterdam — Demo Status</h1>
+  <p class="subtitle">Booth opens June 13, 2026 • Last updated: <span id="updated">May 28, 2026</span></p>
+  <p class="countdown" id="countdown">Loading countdown…</p>
+
+  <div class="banner">
+    <b>Demo scope</b> — Hub AI is committed. Mobile AI is a stretch goal (depends on Aditya's mobile model ETA — needs commit by Friday). Care-portal AI cut from demo, shipping post-conference.
+  </div>
+
+  <div class="grid">
+
+    <!-- HUB -->
+    <div class="platform">
+      <h2>🎯 Hub</h2>
+
+      <div class="feature">
+        <div class="dot green"></div>
+        <div class="info">
+          <div class="name">Hub AI (Allergies flow)</div>
+          <div class="meta">Aditya (model) + Gopi (integration + UI) • Daanish UI: tomorrow • ETA: Jun 3 • <b>Committed for demo</b></div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot yellow"></div>
+        <div class="info">
+          <div class="name">Hub device firmware on new hardware</div>
+          <div class="meta">Amjad • Blocked: awaiting new hub device delivery</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot yellow"></div>
+        <div class="info">
+          <div class="name">Sensors + BLE integration</div>
+          <div class="meta">Amjad • Blocked: awaiting sensors from Vishnu</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot grey"></div>
+        <div class="info">
+          <div class="name">Hub auto-reset between visitors</div>
+          <div class="meta">Gopi • Critical for booth use • ETA: Jun 3</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot green"></div>
+        <div class="info">
+          <div class="name">Hub optimizations</div>
+          <div class="meta">Gopi • In progress</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE -->
+    <div class="platform">
+      <h2>📱 Mobile</h2>
+
+      <div class="feature">
+        <div class="dot blue"></div>
+        <div class="info">
+          <div class="name">Mobile AI</div>
+          <div class="meta"><b>Stretch goal.</b> Daanish UI: Mon Jun 1 • Aditya model ETA: TBC by Friday</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot green"></div>
+        <div class="info">
+          <div class="name">Mobile UI fixes</div>
+          <div class="meta">Aakash • In progress</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot grey"></div>
+        <div class="info">
+          <div class="name">Hosting (TestFlight iOS + Play Internal Android)</div>
+          <div class="meta">Sreya • ETA: Wed evening</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot grey"></div>
+        <div class="info">
+          <div class="name">Hub-to-mobile sensor integration (WebRTC/BLE/Wifi)</div>
+          <div class="meta">Amjad • Blocked: awaiting sensors</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARE-PORTAL -->
+    <div class="platform">
+      <h2>🖥 Care-Portal</h2>
+
+      <div class="feature">
+        <div class="dot red"></div>
+        <div class="info">
+          <div class="name status-cut">Care-portal AI</div>
+          <div class="meta"><b>Cut from demo</b> — shipping post-conference. Aditya needs Jun 1+ minimum (many flows). Daryna UI: no response yet.</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot green"></div>
+        <div class="info">
+          <div class="name">Tenant management UI</div>
+          <div class="meta">Deon • ETA: Jun 3</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot green"></div>
+        <div class="info">
+          <div class="name">Care-portal UI fixes</div>
+          <div class="meta">Aakash + Sreya • In progress</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot grey"></div>
+        <div class="info">
+          <div class="name">Hosting (web)</div>
+          <div class="meta">Sreya • ETA: Wed evening</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BACKEND -->
+    <div class="platform">
+      <h2>⚙️ Backend</h2>
+
+      <div class="feature">
+        <div class="dot yellow"></div>
+        <div class="info">
+          <div class="name">Hub AI model</div>
+          <div class="meta">Aditya • ETA: tomorrow night ⚠️ critical path</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot blue"></div>
+        <div class="info">
+          <div class="name">Mobile AI model</div>
+          <div class="meta">Aditya • ETA: TBC — committed date needed by Friday</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot red"></div>
+        <div class="info">
+          <div class="name status-cut">Care-portal AI model</div>
+          <div class="meta">Cut from demo • Aditya: Jun 1+ minimum, structure-dependent</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot green"></div>
+        <div class="info">
+          <div class="name">Backend fixes</div>
+          <div class="meta">Sreya + Deon • In progress</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot grey"></div>
+        <div class="info">
+          <div class="name">Backend hosting (prod)</div>
+          <div class="meta">Sreya • ETA: May 30</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOSTING + QA -->
+    <div class="platform">
+      <h2>🚀 Hosting & QA</h2>
+
+      <div class="feature">
+        <div class="dot grey"></div>
+        <div class="info">
+          <div class="name">Apps hosted (web + mobile + backend)</div>
+          <div class="meta">Sreya • ETA: Wed evening (this week)</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot grey"></div>
+        <div class="info">
+          <div class="name">CI + branch protection + PR previews</div>
+          <div class="meta">Sreya • ETA: Jun 1</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot grey"></div>
+        <div class="info">
+          <div class="name">Daily smoke tests</div>
+          <div class="meta">Aakash • Starts Jun 1</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot grey"></div>
+        <div class="info">
+          <div class="name">Break-it week (whole team)</div>
+          <div class="meta">Jun 6 – Jun 10</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot grey"></div>
+        <div class="info">
+          <div class="name">Stranger test (5 outsiders try the hub cold)</div>
+          <div class="meta">Aakash • ETA: Jun 8</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOCKERS -->
+    <div class="platform">
+      <h2>⚠️ Open Blockers</h2>
+
+      <div class="feature">
+        <div class="dot red"></div>
+        <div class="info">
+          <div class="name">New hub device delivery</div>
+          <div class="meta">Blocks ~80% of Amjad's work • ETA needs confirmation from Roshan</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot red"></div>
+        <div class="info">
+          <div class="name">Sensors from Vishnu</div>
+          <div class="meta">Blocks hub sensor flow + mobile sensor integration • ETA needs confirmation</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot yellow"></div>
+        <div class="info">
+          <div class="name">Daryna's care-portal AI UI</div>
+          <div class="meta">No response — care-portal AI cut from demo for now</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="dot yellow"></div>
+        <div class="info">
+          <div class="name">Aditya's mobile AI ETA</div>
+          <div class="meta">Need commit by Friday to keep Mobile AI in demo scope</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><span class="dot green"></span> On track</div>
+    <div class="legend-item"><span class="dot yellow"></span> At risk / Blocked</div>
+    <div class="legend-item"><span class="dot red"></span> Cut from demo</div>
+    <div class="legend-item"><span class="dot blue"></span> Stretch goal</div>
+    <div class="legend-item"><span class="dot grey"></span> Not started</div>
+  </div>
+
+  <footer>
+    Internal — Ausa Health team • Updated daily by Sreya
+  </footer>
+</div>
+
+<script>
+  const target = new Date("2026-06-13T09:00:00");
+  function tick() {
+    const now = new Date();
+    const diff = target - now;
+    if (diff <= 0) {
+      document.getElementById("countdown").textContent = "🎉 Booth is live!";
+      return;
+    }
+    const days = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    document.getElementById("countdown").textContent =
+      `⏱ ${days} days, ${hours} hours until booth opens`;
+  }
+  tick();
+  setInterval(tick, 60000);
+</script>
+</body>
+</html>
